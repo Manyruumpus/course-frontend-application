@@ -1,0 +1,7 @@
+@import "tailwindcss";
+
+@layer utilities {
+    .romantic_input {
+        @apply sm:px-10 px-5;
+      }
+}
