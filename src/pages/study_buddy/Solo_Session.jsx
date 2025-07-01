@@ -1,9 +1,5 @@
-// src/pages/Solo_Session.jsx
+
 import React, { useEffect, useState, useCallback, useRef } from "react";
-import {
-  FaPlay, FaPause, FaRedo, FaPlus, FaTrashAlt, 
-  FaVolumeUp, FaVolumeMute, FaExpand, FaKeyboard
-} from "react-icons/fa";
 
 const QUOTES = [
   "Deep work creates deep rewards.",
@@ -154,21 +150,18 @@ export default function Solo_Session() {
           }`}
           title="Toggle Sound (M)"
         >
-          {muted ? <FaVolumeMute /> : <FaVolumeUp />}
         </button>
         <button 
           onClick={() => setFullscreen(!fullscreen)}
           className="w-10 h-10 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center text-white transition-all hover:scale-105"
           title="Toggle Fullscreen (F)"
         >
-          <FaExpand />
         </button>
         <button 
           onClick={() => setShowShortcuts(!showShortcuts)}
           className="w-10 h-10 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center text-white transition-all hover:scale-105"
           title="Keyboard Shortcuts"
         >
-          <FaKeyboard />
         </button>
       </div>
       
@@ -275,13 +268,11 @@ export default function Solo_Session() {
                       mode === "Focus" ? "bg-teal-600 hover:bg-teal-500" : "bg-amber-600 hover:bg-amber-500"
                     }`}
                   >
-                    {run ? <FaPause /> : <FaPlay />}
                   </button>
                   <button 
                     onClick={resetTimer} 
                     className="w-12 h-12 rounded-full bg-red-600 hover:bg-red-500 flex items-center justify-center transition-all hover:scale-105"
                   >
-                    <FaRedo />
                   </button>
                 </div>
               </div>
@@ -342,7 +333,6 @@ export default function Solo_Session() {
                     onClick={() => deleteTask(task.id)}
                     className="text-red-400 hover:text-red-300 p-1 transition-colors"
                   >
-                    <FaTrashAlt />
                   </button>
                 </div>
               ))}
@@ -365,7 +355,6 @@ export default function Solo_Session() {
                 type="submit" 
                 className="w-10 h-10 rounded-lg bg-teal-600 hover:bg-teal-500 flex items-center justify-center transition-colors"
               >
-                <FaPlus />
               </button>
             </form>
           </div>
