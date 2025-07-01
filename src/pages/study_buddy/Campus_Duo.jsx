@@ -1,7 +1,6 @@
 // src/pages/Campus_Duo.jsx
 import React from "react";
 import { NavLink } from "react-router-dom";
-import { FaHeart, FaUsers } from "react-icons/fa";
 
 const Campus_Duo = () => (
   <div className="min-h-screen bg-gray-50 flex flex-col items-center justify-center p-6">
@@ -9,7 +8,6 @@ const Campus_Duo = () => (
     <div className="max-w-3xl text-center">
       <h1 className="text-5xl font-bold text-indigo-800 mb-4 inline-flex items-center">
         Campus Duo
-        <FaHeart className="text-pink-500 ml-3 animate-pulse" />
       </h1>
       <p className="text-xl text-gray-700  mb-6">
         Because, love doesn’t come only on Valentine’s week 🐶❤️
@@ -31,7 +29,6 @@ const Campus_Duo = () => (
     {/* Features Grid */}
     <div className="grid gap-8 mt-12 w-full max-w-4xl sm:grid-cols-2">
       <div className="bg-white p-6 rounded-lg shadow-lg flex flex-col items-center text-center">
-        <FaUsers className="text-indigo-600 text-4xl mb-4" />
         <h3 className="text-2xl font-semibold text-gray-800 mb-2">
           Real Campus Connections
         </h3>
@@ -40,7 +37,6 @@ const Campus_Duo = () => (
         </p>
       </div>
       <div className="bg-white p-6 rounded-lg shadow-lg flex flex-col items-center text-center">
-        <FaHeart className="text-pink-500 text-4xl mb-4" />
         <h3 className="text-2xl font-semibold text-gray-800 mb-2">
           Genuine Matches
         </h3>
