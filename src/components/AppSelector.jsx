@@ -1,7 +1,6 @@
 // src/components/AppSelector.jsx
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { FaGraduationCap, FaHeart, FaArrowRight } from 'react-icons/fa';
 
 const AppSelector = () => {
   const navigate = useNavigate();
@@ -40,7 +39,6 @@ const AppSelector = () => {
                 </p>
                 <div className="flex items-center justify-center text-teal-400 group-hover:text-teal-300 transition-colors">
                   <span className="mr-2">Get Started</span>
-                  <FaArrowRight className="group-hover:translate-x-1 transition-transform" />
                 </div>
               </div>
             </div>
@@ -54,7 +52,6 @@ const AppSelector = () => {
             <div className="bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl p-8 h-full transition-all duration-300 hover:scale-105 hover:bg-white/15">
               <div className="text-center">
                 <div className="w-20 h-20 bg-pink-600 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
-                  <FaHeart className="text-3xl text-white" />
                 </div>
                 <h2 className="text-2xl font-bold text-white mb-4">Campus Duo</h2>
                 <p className="text-slate-300 mb-6">
@@ -63,7 +60,6 @@ const AppSelector = () => {
                 </p>
                 <div className="flex items-center justify-center text-pink-400 group-hover:text-pink-300 transition-colors">
                   <span className="mr-2">Get Started</span>
-                  <FaArrowRight className="group-hover:translate-x-1 transition-transform" />
                 </div>
               </div>
             </div>
