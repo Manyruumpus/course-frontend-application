@@ -1,10 +1,5 @@
 // src/components/AboutSection.jsx
 import React from 'react';
-import {
-  FaHeart,
-  FaHandshake,
-  FaMapMarkerAlt,
-} from 'react-icons/fa';
 
 const About = () => (
   <section
@@ -26,7 +21,6 @@ const About = () => (
       <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
         {/* 1 ─ Genuine Chemistry */}
         <div className="rounded-lg bg-white p-6 shadow-lg">
-          <FaHeart className="mx-auto mb-4 text-rose-500" size={48} />
           <h3 className="mb-2 text-2xl font-semibold text-rose-800">
             Genuine Chemistry
           </h3>
@@ -38,7 +32,6 @@ const About = () => (
 
         {/* 2 ─ Interest-Based Matches */}
         <div className="rounded-lg bg-white p-6 shadow-lg">
-          <FaHandshake className="mx-auto mb-4 text-rose-500" size={48} />
           <h3 className="mb-2 text-2xl font-semibold text-rose-800">
             Interest-Based Matches
           </h3>
@@ -50,7 +43,6 @@ const About = () => (
 
         {/* 3 ─ Campus-First Safety */}
         <div className="rounded-lg bg-white p-6 shadow-lg">
-          <FaMapMarkerAlt className="mx-auto mb-4 text-rose-500" size={48} />
           <h3 className="mb-2 text-2xl font-semibold text-rose-800">
             Campus-First Safety
           </h3>
