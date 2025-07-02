@@ -24,7 +24,7 @@ if [ ! -f .env ]; then
     echo "⚠️  .env file not found. Copying from .env.example..."
     cp .env.example .env
     echo "📝 Please edit .env file with your credentials before continuing."
-    echo "   Required: OPENAI_API_KEY, Google Service Account credentials"
+    echo "   Required: DEEPSEEK_API_KEY, Google Service Account credentials"
     exit 1
 fi
 

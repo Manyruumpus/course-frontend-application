@@ -44,11 +44,10 @@ def test_imports():
         return False
     
     try:
-        import openai
-        from langchain_openai import ChatOpenAI
-        print("✅ OpenAI/LangChain OpenAI imported successfully")
+        from langchain_deepseek import ChatDeepSeek
+        print("✅ DeepSeek/LangChain DeepSeek imported successfully")
     except ImportError as e:
-        print(f"❌ OpenAI import failed: {e}")
+        print(f"❌ DeepSeek import failed: {e}")
         return False
     
     return True
@@ -65,12 +64,12 @@ def test_environment():
     else:
         print("⚠️  .env file not found (using environment variables)")
     
-    # Check OpenAI API key
-    openai_key = os.getenv('OPENAI_API_KEY')
-    if openai_key:
-        print("✅ OpenAI API key configured")
+    # Check DeepSeek API key
+    deepseek_key = os.getenv('DEEPSEEK_API_KEY')
+    if deepseek_key:
+        print("✅ DeepSeek API key configured")
     else:
-        print("❌ OpenAI API key not found")
+        print("❌ DeepSeek API key not found")
         return False
     
     # Check Google service account
@@ -133,25 +132,25 @@ def test_google_calendar():
         print(f"❌ Google Calendar connection failed: {e}")
         return False
 
-def test_openai():
-    """Test OpenAI connection."""
-    print("\n🔍 Testing OpenAI connection...")
+def test_deepseek():
+    """Test DeepSeek connection."""
+    print("\n🔍 Testing DeepSeek connection...")
     
     try:
-        from langchain_openai import ChatOpenAI
+        from langchain_deepseek import ChatDeepSeek
         
-        llm = ChatOpenAI(model="gpt-3.5-turbo", temperature=0)
+        llm = ChatDeepSeek(model="deepseek-chat", temperature=0)
         response = llm.invoke("Hello, this is a test. Please respond with 'Test successful!'")
         
         if "test successful" in response.content.lower():
-            print("✅ OpenAI connection successful")
+            print("✅ DeepSeek connection successful")
             return True
         else:
-            print(f"⚠️  OpenAI responded but with unexpected content: {response.content}")
+            print(f"⚠️  DeepSeek responded but with unexpected content: {response.content}")
             return True  # Still working, just unexpected response
             
     except Exception as e:
-        print(f"❌ OpenAI connection failed: {e}")
+        print(f"❌ DeepSeek connection failed: {e}")
         return False
 
 def main():
@@ -175,12 +174,12 @@ def main():
     else:
         print("\n⚠️  Skipping Google Calendar test - credentials not configured")
     
-    # Test OpenAI (only if key is configured)
-    if os.getenv('OPENAI_API_KEY'):
-        if not test_openai():
+    # Test DeepSeek (only if key is configured)
+    if os.getenv('DEEPSEEK_API_KEY'):
+        if not test_deepseek():
             all_passed = False
     else:
-        print("\n⚠️  Skipping OpenAI test - API key not configured")
+        print("\n⚠️  Skipping DeepSeek test - API key not configured")
     
     # Summary
     print("\n" + "="*50)
@@ -195,7 +194,7 @@ def main():
         print("1. Install missing packages: pip install -r requirements.txt")
         print("2. Set up environment variables in .env file")
         print("3. Configure Google Service Account credentials")
-        print("4. Set up OpenAI API key")
+        print("4. Set up DeepSeek API key")
     
     return all_passed
 
