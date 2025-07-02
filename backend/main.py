@@ -7,7 +7,7 @@ from datetime import datetime, timedelta
 import pytz
 from google.oauth2.service_account import Credentials
 from googleapiclient.discovery import build
-from langchain_deepseek import ChatDeepSeek
+from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain.tools import tool
 from langgraph.graph import StateGraph, START, END
 from langgraph.graph.message import add_messages
@@ -163,7 +163,11 @@ class GoogleCalendarService:
 
 # Initialize services
 calendar_service = GoogleCalendarService()
-llm = ChatDeepSeek(model="deepseek-chat", temperature=0.7)
+llm = ChatGoogleGenerativeAI(
+    model="gemini-1.5-flash",
+    temperature=0.7,
+    google_api_key=os.getenv("GOOGLE_API_KEY")
+)
 
 # LangGraph State
 class AgentState(TypedDict):

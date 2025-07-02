@@ -15,7 +15,7 @@ A conversational AI agent that assists users in booking appointments on Google C
 
 - **Backend**: Python FastAPI with LangGraph agent framework
 - **Frontend**: Streamlit chat interface
-- **AI/LLM**: DeepSeek Chat with function calling
+- **AI/LLM**: Google Gemini 1.5 Flash with function calling
 - **Calendar**: Google Calendar API with Service Account authentication
 - **Deployment**: Railway/Render/Fly.io compatible
 
@@ -27,9 +27,9 @@ A conversational AI agent that assists users in booking appointments on Google C
    - Create a Service Account with Calendar access
    - Download the service account JSON key file
 
-2. **DeepSeek API Key**:
-- Get an API key from DeepSeek
-   - Ensure you have credits available
+2. **Google AI API Key**:
+   - Get an API key from [Google AI Studio](https://makersuite.google.com/app/apikey)
+   - Ensure you have access to Gemini models
 
 ## 🔧 Setup Instructions
 
@@ -65,7 +65,7 @@ pip install -r requirements.txt
 cp .env.example .env
 
 # Edit .env with your credentials
-DEEPSEEK_API_KEY=your_deepseek_api_key
+GOOGLE_API_KEY=your_google_ai_api_key
 GOOGLE_SERVICE_ACCOUNT_FILE=service-account-key.json
 GOOGLE_CALENDAR_ID=primary
 ```
@@ -119,7 +119,7 @@ streamlit run streamlit_app.py
 For deployment, set these environment variables:
 
 ```
-DEEPSEEK_API_KEY=your_deepseek_api_key
+GOOGLE_API_KEY=your_google_ai_api_key
 GOOGLE_SERVICE_ACCOUNT_JSON={"type":"service_account",...}
 GOOGLE_CALENDAR_ID=primary
 BACKEND_URL=https://your-backend-url.com
@@ -184,10 +184,10 @@ The LangGraph agent has access to these tools:
    - Check calendar sharing permissions
    - Ensure Calendar API is enabled
 
-2. **DeepSeek API errors**:
+2. **Google AI API errors**:
    - Verify API key is correct
-   - Check account credits/billing
-   - Ensure model access permissions
+   - Check account credits/billing (if applicable)
+   - Ensure Gemini model access permissions
 
 3. **Backend connection issues**:
    - Check if backend is running on correct port
