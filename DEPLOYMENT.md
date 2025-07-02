@@ -7,7 +7,7 @@ This guide covers deploying the Calendar Booking Assistant to various hosting pl
 - [ ] Google Cloud Service Account created and configured
 - [ ] Google Calendar API enabled
 - [ ] Service account has calendar access
-- [ ] OpenAI API key obtained
+- [ ] DeepSeek API key obtained
 - [ ] All environment variables documented
 
 ## 🌐 Platform-Specific Deployment
@@ -30,7 +30,7 @@ cd backend
 railway up
 
 # 4. Set environment variables in Railway dashboard:
-OPENAI_API_KEY=your_key_here
+DEEPSEEK_API_KEY=your_key_here
 GOOGLE_SERVICE_ACCOUNT_JSON={"type":"service_account"...}
 GOOGLE_CALENDAR_ID=primary
 ```
@@ -84,7 +84,7 @@ cd backend
 fly launch
 # Edit fly.toml as needed
 fly deploy
-fly secrets set OPENAI_API_KEY=your_key
+fly secrets set DEEPSEEK_API_KEY=your_key
 fly secrets set GOOGLE_SERVICE_ACCOUNT_JSON='{"type":"service_account"...}'
 ```
 
@@ -144,7 +144,7 @@ gcloud run deploy --image gcr.io/PROJECT_ID/calendar-frontend --platform managed
 
 ### Backend Variables:
 ```
-OPENAI_API_KEY=sk-...
+DEEPSEEK_API_KEY=sk-...
 GOOGLE_SERVICE_ACCOUNT_JSON={"type":"service_account",...}
 GOOGLE_CALENDAR_ID=primary
 PORT=8000
@@ -159,7 +159,7 @@ PORT=8501
 ## 🔒 Security Best Practices
 
 1. **Never commit credentials**: Use environment variables
-2. **Rotate API keys**: Regularly update OpenAI and Google credentials
+2. **Rotate API keys**: Regularly update DeepSeek and Google credentials
 3. **Limit calendar access**: Only grant necessary permissions
 4. **Use HTTPS**: Ensure all communication is encrypted
 5. **Monitor usage**: Set up alerts for unusual API usage
@@ -170,7 +170,7 @@ PORT=8501
 - Set up health checks on `/health` endpoint
 - Monitor API response times
 - Track calendar API quota usage
-- Monitor OpenAI token usage
+- Monitor DeepSeek token usage
 
 ### Logging Configuration:
 ```python
@@ -196,7 +196,7 @@ logging.basicConfig(
    - Check calendar sharing permissions
    - Ensure Calendar API is enabled
 
-3. **OpenAI Connection**:
+3. **DeepSeek Connection**:
    - Verify API key format
    - Check account billing status
    - Monitor rate limits
@@ -262,4 +262,4 @@ jobs:
 - [Render Docs](https://render.com/docs)
 - [Fly.io Docs](https://fly.io/docs/)
 - [Google Calendar API](https://developers.google.com/calendar)
-- [OpenAI API Docs](https://platform.openai.com/docs)
+- [DeepSeek API Docs](https://platform.deepseek.com/docs)
